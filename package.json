@@ -16,10 +16,12 @@
     "gatsby-transformer-sharp": "^2.1.21",
     "install": "^0.12.2",
     "netlify-identity-widget": "^1.5.5",
+    "node-fetch": "^2.6.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "react-netlify-identity": "^0.1.7"
   },
   "devDependencies": {
     "prettier": "^1.18.2"
