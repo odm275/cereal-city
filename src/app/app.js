@@ -44,7 +44,7 @@ function Login() {
         load(loginUser(email, password))
           .then(user => {
             console.log("Success! Logged in", user)
-            navigate("/dashboard")
+            navigate("/app/dashboard")
           })
           .catch(err => console.error(err) || setMsg("Error: " + err.message))
       }}
@@ -111,7 +111,7 @@ function Dashboard() {
   const [isLoading, load] = useLoading()
   const [msg, setMsg] = useState("Click to load something")
   const handler = () => {
-    load(authedFetch.get("/.netlify/functions/authEndPoint")).then(setMsg)
+    load(authedFetch.get("/.netlify/functions/auth-end-point")).then(setMsg)
   }
   return (
     <div>
