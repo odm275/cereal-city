@@ -30,7 +30,7 @@ function Login() {
     load(signupUser(email, password))
       .then(user => {
         console.log("Success! Signed up", user)
-        navigate("/dashboard")
+        navigate("/app/dashboard")
       })
       .catch(err => console.error(err) || setMsg("Error: " + err.message))
   }
