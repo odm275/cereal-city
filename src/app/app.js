@@ -77,26 +77,7 @@ function Login() {
 function Home() {
   return (
     <div>
-      <h3>Welcome to the Home page!</h3>
-      <p>
-        this is a <b>Public Page</b>, not behind an authentication wall
-      </p>
-      <div style={{ backgroundColor: "#EEE", padding: "1rem" }}>
-        <div>
-          <a
-            href={`https://app.netlify.com/start/deploy?repository=https://github.com/netlify/create-react-app-lambda/tree/reachRouterAndGoTrueDemo&stack=cms`}
-          >
-            <img
-              src="https://www.netlify.com/img/deploy/button.svg"
-              alt="Deploy to Netlify"
-            />
-          </a>
-        </div>
-        This demo is{" "}
-        <a href="https://github.com/netlify/create-react-app-lambda/tree/reachRouterAndGoTrueDemo">
-          Open Source.
-        </a>{" "}
-      </div>
+      <h3>Welcome to da shop!</h3>
     </div>
   )
 }
@@ -179,32 +160,11 @@ function App() {
           <h1 className="title">
             <span>Netlify Identity</span>
             <span className="italic">&</span> <span>Reach Router</span>
+            <span>
+              Some stuff doesn't work on localhost, check docs or original
+              example
+            </span>
           </h1>
-          <label>
-            <a href="https://www.netlify.com/docs/identity/">
-              Netlify Identity
-            </a>{" "}
-            Instance:{" "}
-            <input
-              type="text"
-              placeholder="your instance here e.g. https://unruffled-roentgen-04c3b8.netlify.com"
-              value={url}
-              onChange={handler}
-              size={50}
-            />
-            <div>
-              <div style={{ display: "inline-block" }}>
-                {window.location.hostname === "localhost" ? (
-                  <pre>WARNING: this demo doesn't work on localhost</pre>
-                ) : (
-                  <pre>
-                    your instance here e.g.
-                    https://unruffled-roentgen-04c3b8.netlify.com
-                  </pre>
-                )}
-              </div>
-            </div>
-          </label>
         </div>
         <Link to="/app/test">test</Link>
         <Nav />
