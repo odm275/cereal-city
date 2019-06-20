@@ -28,6 +28,9 @@ class IndexPage extends React.Component {
     return (
       <Layout>
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+        <Link to="/app/">
+          <b>Go to App (with Netlify Identity)</b>
+        </Link>
       </Layout>
     )
   }

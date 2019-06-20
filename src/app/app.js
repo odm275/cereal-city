@@ -1,4 +1,4 @@
-import React, { createContext, useContext } from "react"
+import React, { createContext, useContext, useRef, useState } from "react"
 import { Link, navigate } from "gatsby"
 import { Router } from "@reach/router"
 import { useNetlifyIdentity } from "react-netlify-identity"
@@ -149,10 +149,10 @@ function Nav() {
   const { isLoggedIn } = useContext(IdentityContext)
   return (
     <nav>
-      <Link to="/">Home</Link> | <Link to="dashboard">Dashboard</Link>
+      <Link to="/app">Home</Link> | <Link to="/app/dashboard">Dashboard</Link>
       {" | "}
       <span>
-        {isLoggedIn ? <Logout /> : <Link to="login">Log In/Sign Up</Link>}
+        {isLoggedIn ? <Logout /> : <Link to="/app/login">Log In/Sign Up</Link>}
       </span>
     </nav>
   )
@@ -160,6 +160,9 @@ function Nav() {
 function Logout() {
   const { logoutUser } = useContext(IdentityContext)
   return <button onClick={logoutUser}>You are signed in. Log Out</button>
+}
+function Test() {
+  return <div>this is a test</div>
 }
 
 function App() {
@@ -203,12 +206,14 @@ function App() {
             </div>
           </label>
         </div>
+        <Link to="/app/test">test</Link>
         <Nav />
         <Router>
           <Home path="/" />
-          <About path="/about" />
-          <Login path="/login" />
-          <PrivateRoute as={Dashboard} path="/dashboard" />
+          <About path="/app/about" />
+          <Login path="/app/login" />
+          <Test path="/app/test" />
+          <PrivateRoute as={Dashboard} path="/app/dashboard" />
         </Router>
       </div>
     </IdentityContext.Provider>

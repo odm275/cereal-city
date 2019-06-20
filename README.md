@@ -1,4 +1,4 @@
-## 🚀 Ecommerce Web App with Gatsby
+## 🚀 JAMstack ecommerce web app
 
 - [x] Gatsby
 - [x] Netlify Dev
