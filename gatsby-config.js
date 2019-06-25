@@ -5,9 +5,16 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-source-drupal`,
+      options: {
+        baseUrl: `http://drupal-cereal-city.lndo.site`,
+      },
+    },
     {
       resolve: `gatsby-plugin-create-client-paths`,
-      options: { prefixes: [`/app/*`] },
+      options: { prefixes: [`/user/*`] },
     },
     `gatsby-plugin-react-helmet`,
     {

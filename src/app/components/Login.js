@@ -15,7 +15,7 @@ function Login() {
     load(signupUser(email, password))
       .then(user => {
         console.log("Success! Signed up", user)
-        navigate("/app/dashboard")
+        navigate("/user/dashboard")
       })
       .catch(err => console.error(err) || setMsg("Error: " + err.message))
   }
@@ -29,7 +29,7 @@ function Login() {
         load(loginUser(email, password))
           .then(user => {
             console.log("Success! Logged in", user)
-            navigate("/app/dashboard")
+            navigate("/user/dashboard")
           })
           .catch(err => console.error(err) || setMsg("Error: " + err.message))
       }}
