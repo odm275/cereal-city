@@ -4,5 +4,5 @@
 - [x] Netlify Dev
 - [x] Netlify Identity
 - [x] Netlify functions for serverless graphql
-- [ ] sanity.io
+- [x] Drupal 8
 - [x] FaundaDB
