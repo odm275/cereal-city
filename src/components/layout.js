@@ -1,31 +1,23 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { StaticQuery, graphql } from "gatsby"
+import { useNetlifyIdentity } from "react-netlify-identity" // Comes with variables and methods ready to be destructured.
+import IdentityContext from "../app/context/IdentityContext"
 
 import Footer from "./footer"
-import Nav from "../app/components/nav"
+import Nav from "./Nav"
 import "./mystyles.scss"
 
 const Layout = ({ children }) => {
+  const identity =
+    useNetlifyIdentity("https://cereal-city.netlify.com") || false
   return (
-    <StaticQuery
-      query={graphql`
-        query SiteTitleQuery {
-          site {
-            siteMetadata {
-              title
-            }
-          }
-        }
-      `}
-      render={data => (
-        <>
-          <Nav />
-          <main>{children}</main>
-          <Footer />
-        </>
-      )}
-    />
+    <>
+      <IdentityContext.Provider value={identity}>
+        <Nav />
+        <main>{children}</main>
+        <Footer />
+      </IdentityContext.Provider>
+    </>
   )
 }
 

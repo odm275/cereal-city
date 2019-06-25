@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react"
 import { Link } from "gatsby"
-import IdentityContext from "../context/IdentityContext"
-import Logout from "./Logout"
+import IdentityContext from "../app/context/IdentityContext"
+import Logout from "../app/components/Logout"
 
 const Nav = () => {
   const { isLoggedIn } = useContext(IdentityContext) || false
@@ -14,7 +14,7 @@ const Nav = () => {
       <div className="navbar-brand">
         <Link class="navbar-item" to="/">
           <img
-            src="https://bulma.io/images/bulma-logo.png"
+            src="https://image.flaticon.com/icons/svg/760/760604.svg"
             width="112"
             height="28"
           />
